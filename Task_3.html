@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/main.css">
+    <link rel="icon" href="_img/MainTabLogo.png">
+    <title>Assignment 2-P3</title>
+    <style>
+      .Container_For_Examples>div{
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Navigation_Bar">
+      <div class="Navigation_Bar_Logo_Div">
+        <img class="Navigation_Bar_Logo" src="_img/MainTabLogo.png" width="50vw">
+      </div>
+      <div class="Navigation_Bar_Title_Div"style="flex-grow:3;padding-top: 1%;">
+        <p class="Navigation_Bar_Title">Kriss Assignment 2 - Part 3</p>
+      </div>
+      <div class="Navigation_Bar_Buttons" style="flex-grow:2;padding-top: 1%; text-align: right;align-content: center;">
+        <a href="index.html">Part 1</a>
+        <a href="Task_2.html">Part 2</a>
+        <a href="Task_3.html">Part 3</a>
+      </div>
+
+    </div>
+
+
+    <div class="Main_Content_Div">
+        <h1>How Browsers Interpret Script:</h1>
+        <p>The thing with the JS is that many browser show it or has function that are different compared to other browsers
+          This creates issues for developers to make web page compatible with different browsers as you need to test them 
+          in different enviroment such as Chrome, Internet Explorer, Firefox and Safari. So I will show the difference between
+          different browsers in action.
+        </p>
+        <h1 style="border-top: 1px solid black;">Browser Detection</h1>
+        <p>This is the most obvious but the browser detection will be different depending on each browser as each of them show the browser details differently
+        </p><br>
+        <button class="RegularButton" onclick="CheckForBrowser()">Check your browser string!</button>
+        <br>
+        <p>If you check your own version you can see that it got Chrome or other data and if you ran it on different web browser you would get different results
+          and if you try checking what browser person is using it is also little bit hard due to fact you have many options on list, checking for browser is little bit hard.
+          <br>
+          Examples below of different browsers running the code:
+        </p><br>
+        <div class= "Container_For_SlideShow">
+          <div class="Slide_Container" id = "Slide_Container_ID">
+            <!--First slide-->
+            <div class = "Slide_Fade">
+              <img src="_img/Third Page/Internet Explorer Alert Example.PNG" width="100%">
+              <p>Internet Explorer</p>
+            </div>
+            <!--Second slide-->
+            <div class = "Slide_Fade">
+              <img src="_img/Third Page/Google Alert Example.PNG" width="100%">
+              <p>Google Chrome</p>
+            </div>
+            <!--Third slide-->
+            <div class = "Slide_Fade">
+              <img src="_img/Third Page/Edge Alert Example.png" width="100%">
+              <p>Microsoft Edge</p>
+            </div>
+            <!--Fourt slide-->
+            <div class = "Slide_Fade">
+              <img src="_img/Third Page/Brave Alert Example.PNG" width="100%">
+              <p>Brave Browser</p>
+            </div>
+          </div>
+          <br>
+          <div class="Dot_Container">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+          </div>
+        </div>
+        <script>
+          var slideIndex = 1;
+          showSlides(slideIndex);
+
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+          function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("Slide_Fade");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+          }
+        </script>
+        <br><br>
+
+        
+        <div class="Container_For_Examples"  style="background-color: rgba(100,100,100,0.5);">
+          <div style="min-width: 500px;">
+            <img src="_img/Third Page/Slide input edge vs chrome.png" style="width:100%;">
+          </div>
+          <div>
+            <p style="color:white;">As you can tell from the pictures each browser has its own way of handling JS and also the styles as some
+              create a window pop up or some just do a pop up on top of the web page without creating a new window.
+              Also due to that you may have sometimes items that do not look as you expected as the example:<br>
+              Image shows comparison of Edge vs Chrome looks of the same code and same visuals.
+            </p>
+          </div>
+        </div>
+        <h1 style="border-top: 1px solid black;">Object Detection:</h1>
+        <p>Due to fact that you don't just get issues with the JS showing differently on each browser but you also get issues with style.
+          You also get issues with certain functions that would not work on certain browsers meaning you have to watch over that but there is a solution
+          to it as how can you make sure if function exists below is an example of document.getElementsByName if that function does not work on all browsers:
+        </p><br>
+        <p style="border:solid 1px white;width:calc(50% + 30px);margin:auto;">
+        if(document.getElementsByName("test")){<br>
+        //The function exists and you can work with it<br>
+        }else{<br>
+          //If it doesn't which means have to find alternative<br>
+        }<br>
+        </p>
+
+        <h1 style="border-top: 1px solid black;">Difference in the running code:</h1>
+        <p>Some websites may not support all the interface scripts which means for example like creating arrays or 
+          creating certain datatypes the browser may not properly work with it or have like a support for sending POST messages to
+          different webpage which can damage experience. Means you have to take into an account and check what is supported by what browsers
+          as example with creating arrays <br><br>var cars = ["Volvo","Honda","BMW"]<br><br> that may not work on internet explorer and may lead to web Page be 
+          unresponsive to a user with Internet explorer.
+        </p>
+        <br>
+        <script>
+          function CheckForBrowser(){
+            sUsrAg = window.navigator.userAgent;
+            alert(sUsrAg);
+          }
+        </script>
+    </div>
+    
+</body>
+</html>

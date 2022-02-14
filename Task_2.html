@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/main.css">
+    <link rel="icon" href="_img/MainTabLogo.png">
+    <title>Assignment 2-P2</title>
+  </head>
+  <body>
+    <div class="Navigation_Bar">
+      <div class="Navigation_Bar_Logo_Div">
+        <img class="Navigation_Bar_Logo" src="_img/MainTabLogo.png" width="50vw">
+      </div>
+      <div class="Navigation_Bar_Title_Div"style="flex-grow:3;padding-top: 1%;">
+        <p class="Navigation_Bar_Title">Kriss Assignment 2 - Part 2</p>
+      </div>
+      <div class="Navigation_Bar_Buttons" style="flex-grow:2;padding-top: 1%; text-align: right;align-content: center;">
+        <a href="index.html">Part 1</a>
+        <a href="Task_2.html">Part 2</a>
+        <a href="Task_3.html">Part 3</a>
+      </div>
+
+    </div>
+
+
+    <div class="Main_Content_Div">
+        <h1>JavaScript and how it improves website functionality:</h1>
+        <p>Javascript is mainly used for interaction or to make a javascript games so you can play on the browser.
+          Main use is to make web page connect with the server also for user to confirm choices also user redirect, also cookie retention and form handing and etc...
+        </p>
+        <br>
+        <br>
+        <h1 style="border-top:solid 3px black;">Confirming Choices and User Prompting:</h1>
+        <div class="Container_For_Examples">
+          <div>
+            <p style="color:white;">Javascript is able to prompt user for confirmation to make sure user is performing the right action in which case such as register or sending data it can prompt if user really want to proceed.
+              As this can fix issues with accidental clicking and fix issues with user adding wrong data. This is really useful on also on bases when you have to remove some data from the database as without it user may
+               accidentally remove data the they wanted. <br><br>
+               This is simple to create as what you need to do is to use function called "confirm(str)" and the str is what string you want it to display and the way it works is just by outputing false if user canceled it or if user said yes it outputs true.
+            </p>
+          </div>
+          <div>
+            <button class="RegularButton" onclick="ClickMeExample()">Click me :D</button>
+          </div>
+
+        
+        </div>
+
+        <h1 style="border-top:solid 3px black;">Redirecting User:</h1>
+        <p>Redirects are made for extra functionality of the web page which are mainly done to put user to correct page depending on their account or either what they are doing.</p>
+        <br><br>
+        <div class="Container_For_Examples">
+          <div><button class="RegularButton" onclick="RedirectExample()">Redirect to index page!</button></div>
+          <div>
+            <p style="color:white;">
+            The use case of this redirect as mentioned before can be depending to their account for example if someone is trying to access the page but they are not logged in so website can detect that
+            and send the user to login page which can be really useful and can save lots of personal time.
+            Also you can use a technique to make website detect if user is using a phone or a windows machine as both of those can have better impact on user interface as windows machine can have more objects
+            but phone needs to be more cramped and more of the hidden style.
+            Or you can also make it so it redirects to global website or changes website depending on region.
+          <br><br>This redirect can be done easy as you just use this line of code "window.location.href="the page""</p>
+          </div>
+          
+        </div>
+
+        <h1 style="border-top:solid 3px black;">Validating Inputs:</h1>
+        <div class="Container_For_Examples">
+          <div><p style="color:white;">With this there are some goods about it but also you have to understand issues.
+          Due to fact that you can edit the JS and the html of the webpage on the user machine meaning doing a validation of emails and passwords
+          on the JS side is not preferred as it can be easily ignored and passed through so if you want to do validation it is better to use server side scripts.<br><br>
+          But not matter that goods are you can make sure that your server does not recieves useless requests like just empty inputs as you want server to 
+          run tasks for usefully purposes, so you can check in JS to make sure in JS if user has added value into their inputs.</p>
+          </div>
+          <div>
+            <form class="Reg_Form_1"method="POST" style="padding-left:5vh;padding-top:2vw;" onsubmit="return false">
+              <p id="TextForTest" style="margin-top:0;font-size:3vh;color:white;">Please enter details for example!</p>
+              <label style="color:white;">Email</label><br>
+              <input class="M_input" type="text" name="email" required><br>
+      
+              <label style="color:white;">Password</label><br>
+              <input class="M_input" type="password" name="pass" required><br>
+              <br>
+              <button class="RegularButton" onClick="CheckIfEmpty()" style="padding-top:0;font-size:2vh;">Submit</button>
+              
+              </form>
+          </div>
+        </div>
+        <p style="margin:auto;width:50%;">This is the code the been used for an example above.</p><br>
+        <p style="border:solid 1px white;width:calc(50% + 30px);margin:auto;">
+          function CheckIfEmpty(){<br>
+          var email = document.getElementsByName('email')[0];<br>
+              var pass = document.getElementsByName('pass')[0];<br>
+              <br>
+              var FilterArray= [email.value,pass.value];<br>
+              <br>
+              var empty = 0;<br>
+              for (var i = 0;i<2;i++){<br>
+                  if(FilterArray[i] == ""){empty++;}<br>
+              }<br>
+              if(empty==0){<br>
+                alert("All lines are filled!!!");<br>
+              }else{<br>
+                alert("Some/all lines are empty.");<br>
+              }<br>
+          }
+        </p>
+        <h1 style="border-top:solid 3px black;">Form Handling:</h1>
+        <p style="width:calc(100px + 70%);">With javascript you are able to take data from input forms and use them, this is due to fact with javascript you are able to put value from the 
+          input to a variable and which can be used by code "document.getElementsById("The ID of the input")" 
+          also for the extra you can do real time calculation with it and without using a server this can be helpful for business side where you want to see
+           how the choices affect the price like ordering pizza and drink as you have different options and you can see real time price on every change you do.
+           Also having forms it lets you clear your selections way easier rather than going through the list of what you added and keep removing it. Also after adding data 
+           javascript can just send it to the server to save it or for future use.
+        </p>
+        <br>
+        <br>
+        <script>
+          function ClickMeExample(){
+            if(confirm("Are you sure you want to click this button?")){
+                alert("You have clicked it :)");
+            }
+          }
+
+          function RedirectExample(){
+            window.location.href = "index.html";
+          }
+
+          function CheckIfEmpty(){
+            var email = document.getElementsByName('email')[0];
+                var pass = document.getElementsByName('pass')[0];
+                
+                var FilterArray= [email.value,pass.value];
+
+                var empty = 0;
+                for (var i = 0;i<2;i++){
+                    if(FilterArray[i] == ""){empty++;}
+                }
+                if(empty==0){
+                  alert("All lines are filled!!!");
+                }else{
+                  alert("Some/all lines are empty.");
+                }
+          }
+        </script>
+        <h1 style="border-top:solid 3px black;">Advantages/Disadvantages of Javascript</h1>
+        <p>Advantages:</p>
+        <ul>
+          <li>Speed:</li>
+          <p>Client-Side javascript is quite fast but this is due to fact it can run withing client-side browser.
+            But as soon as you need to use sources from other places it can hard performance but depends on what you take it from and how you use it.
+            As native javascript has no link with the network and does not require any to be ran.
+          </p><br>
+          <li>Simplicity:</li>
+          <p>JavaScript is simple to learn and to implement as it does look complicated if you do not understand it
+            or have not tried it but when you do it is simple to start with it and code in it.
+          </p><br>
+          <li>Popularity:</li>
+          <p>JavaScript is really popular and is used everywhere and on every web page you visit so by learning it, you can get into career of 
+            website production and also can make your own websites but its not just it, due to fact its popular it also means there are many people who
+            used stackoverflow or reddit meaning if you need help creating website or fixing it, you can get it any time.
+          </p><br>
+          <li>Interoperability:</li>
+          <p>What it means by it is you can use different coding languages to communicate with javascript like PHP or python or MySQLi or C or etc...
+            <br>Meaning you can make many interactions and adapt the website to speed or link it to database or have way more functions like streaming 
+            or saving data and or sharing it.
+          </p><br>
+          <li>Better for server load:</li>
+          <p>As being client side script it means website server can relax more and do other important stuff as making all calculation for user and all interactions that would
+            overload the server.
+          </p>
+        </ul>
+        <br>
+        <!-- Disadvantage Part -->
+        <br>
+        <p>Disadvantages:</p>
+        <ul>
+          <li>Security:</li>
+          <p>Issue with the JavaScript is the security itself as due to fact it is client side meaning you can edit the javascript code also HTML and CSS code as however user would like.
+            This creates an issue if you are dealing with passwords or personal information as it means if you do security check on JS side it can be skipped if user is clever enough and it 
+            does not take a master in JS to figure that out even average human can make a breach with it, which means all actions to server must be done with server side scripts.
+          </p><br>
+          <li>Browser Support:</li>
+          <p>This is issue with how every browser takes in JS, as some browsers take JS and shows it different compared to other browsers.
+            Which makes the job of making website cross-browser much harder as you got to test and try editing code to suit the specific browser, JS has way to detect browser but still takes time to fix issues.<br>
+            This also means some actions may not work properly on different browsers this would be why sometimes you get an issue where web page works on Chrome but does not on your browser.
+          </p><br>
+          <li>Lack of proper Debugging:</li>
+          <p>If you get an error in C or C++ it shows you the location of error and what has crashed(some IDE show what you can do to fix it like Eclipse) but 
+            if you look at JS side, you can use HTML editors that help with debugging but they are not as efficient as other languages editors and issue is that browser does not show you any error messages
+            this means if you get an error you have no way seeing what line is breaking the code or why has it done that, which takes time for debugging. 
+          </p>
+        </ul>
+        <br>
+    </div>
+    
+</body>
+</html>

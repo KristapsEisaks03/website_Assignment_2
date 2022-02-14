@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="_css/main.css">
+    <link rel="icon" href="_img/MainTabLogo.png">
+    <title>Assignment 2-P1</title>
+  </head>
+  <body>
+    <div class="Navigation_Bar">
+      <div class="Navigation_Bar_Logo_Div">
+        <img class="Navigation_Bar_Logo" src="_img/MainTabLogo.png" width="50vw">
+      </div>
+      <div class="Navigation_Bar_Title_Div"style="flex-grow:3;padding-top: 1%;">
+        <p class="Navigation_Bar_Title">Kriss Assignment 2 - Part 1</p>
+      </div>
+      <div class="Navigation_Bar_Buttons" style="flex-grow:2;padding-top: 1%; text-align: right;align-content: center;">
+        <a href="index.html">Part 1</a>
+        <a href="Task_2.html">Part 2</a>
+        <a href="Task_3.html">Part 3</a>
+      </div>
+
+    </div>
+
+
+    <div class="Main_Content_Div">
+      <h1>Scripting Languages!</h1>
+      <p>Scripting languages are languages that can make your website more interactable
+      like adding animations or make way better support for phones so you can use your website both on PC and phone.
+      But also can be used to make login pages and interact with database!<br>
+      Examples of scripting languages: Javascript, VBScript, Perl, PHP, ASP<br><br>
+      But there are difference between some of the scripts as there are scripts that run on user side such as Javascript but also are ones that run
+       on server side such as PHP and that gives you great flexability on actions and things you can do on user side and also on server side. Also adding more security
+       on top as user cannot interact with server side scripts!</p>
+       <br>
+       <br>
+       <h1>Client Side:</h1>
+       <p>Client side run on the users device which means they can be seen and edited using inspect tool on the browsers for example below which is ran on the user side and can be edited:
+       </p>
+       <br>
+       <input type="range" id="Range_Input_ForExample" onchange="RunOnChange(this)"min="5" max="30" value="10">
+       <div id="Example_Block_ID"class="Example_Block">
+         <p>Hiya I am a Block :D</p>
+       </div>
+       <script type="text/javascript">
+          function RunOnChange(NumValue){
+            var RangeInput = document.getElementById("Range_Input_ForExample").value;
+            document.getElementById("Example_Block_ID").style.animationDuration =RangeInput+"s";
+            if(RangeInput <5){
+              alert("Block goes brrr");
+            }
+          }
+       </script>
+       <p>So this below is an example of block moving left to right and the slider lets you change the speed of the block moving left or right.
+       But due to fact it is running with javascript which is client side script meaning you can edit it and change speed of it and make it go faster!</p>
+       <br><br>
+       <h1>Server Side:</h1>
+       <p>With server side it is different as it is mainly used not for interaction by user but more for communication between user and server and do other requests like SQL.
+       by this it means you cannot use inspect tool to check the code underneath the PHP or server script side as those are stored in the server so cannot be accessed by user which increases security.
+      <br>Below I am showing example of how javascript is communicating with the PHP to filter user input for logging in:<br>
+      This is how the login page looks like:</p><br>
+      <img src="_img/Pic Of login sector.PNG" alt="" height="200">
+      <br><br>
+      <div class="Container_For_Examples" style="width:80%;margin-left:10%;height:auto;background-color:rgba(100,100,100,0.5);">
+        <div>
+          <img src="_img/Javascript Show from login page.png" width="100%">
+        </div>
+        <div>
+          <p style="color:white;padding-top:calc(2% + 20px);padding-left:5%;width:90%;">Which has the javascript underneath it which shows how it is sending POST data (for security reasons) to transfer user data and what password user has entered.
+          This part at the top also checks if user has entered everything that required as I do not want server to have requests that are useless so it can have more power for other operations.</p>
+        </div>
+
+      </div>
+      <br>
+
+      <div class="Container_For_Examples" style="height:auto;background-color:rgba(100,100,100,0.5);width:80%;margin-left: 10%;">
+        <div class="">
+          <p style="color:white;padding-top:calc(2% + 20px);padding-left:5%;width:90%;">This is the server side PHP that user cannot access and as you can tell I have used $_POST to check for data that been posted to the webpage which then is being filtered and checked if any of them are empty
+          as creating filters is way useful on server side rather than the client side as everyone can just crack it and get pass it. What it does it creates an array with error lists with specific key names (instead of using 0 or number 1 to arrange data)
+          so which then it filters inputs according to their use like for email or passwords and checks if any of them are empty which then after it goes through if any errors been added and if none then it continues to function which connects to database and etc...</p>
+        </div>
+        <div class="">
+          <img src="_img/PHP side from login.png" alt="" width="100%" >
+        </div>
+
+      </div>
+
+
+
+      <h1>Event-Driven Programming:</h1>
+      <p>What is Event driven programming?<br>
+      It is programming that is mainly based on the events and interactions from the user or getting triggered by events mainly saying just inputs.
+      this could be like a mouse move, clicking, button press and etc...<br>
+
+      Event driven programming is really suited to the programs that are really focused on user interactions and to the user changes which could be like a photoshop program. As this lets you create many options for the user like inputs and buttons
+      and let them decide what they want.
+
+      The downside of this is if you are creating program that uses GUI meaning event driven is only best for GUI programs and nothing else works that great compared to this paradigm.</p>
+
+      <h1>Object Orientated Programming:</h1>
+      <p>Object Orientated programming is focused mainly on the object and their use rather then their actions. Objects could be things like animals or humans or cars but they can have different attributes and uses where you want to call them or etc.
+      At here you can sort things in groups or classes and if you need something specific you can call the class or object and take the data you need. You are also able to create sub classes inside the class or use techniques like inheritance which can make life easier.<br>
+      Example of programming languages that are OOP: Java, C++ , C, Visual Basic and Ruby.
+    </p>
+
+
+    <h1>Methods/Properties:</h1>
+    <p>Methods are simple in the programming as they are the made variables that can do some sort of an action like converting string to int or creating window as an app or etc...
+      Sometimes they may use properties which take data from the system and are required to run the code like example, to convert string to int you need a data what string to change so you can use properties to get that data converted(like this ConvStrToInt("5") where the "5" is the property being shared).
+    </p>
+
+    <h1>Loops/Iteration:</h1>
+    <p>Loops are simple too it is used mostly by checking over the array or looping function until everything adds up. You can use loops in any scripting language such as javascript or PHP and etc...
+      Mainly saying loops just repeat the sequence of instructions until specific condition is met which could be like highest key been reached on the array table. Sometimes you can accidentally create infinity loop where the program does not stops looping and could crash the program or the device itself meaning 
+      at creating loops you have to make sure you are not making infinity loops.
+
+      <br>With iteration it got similar preference but is mostly focused on how many times the program will loop the code.
+    </p>
+
+    <h1>Functions:</h1>
+    <p>Functions are also simple as they are a block of organized and reusable code that used to perform single action (or many depends on what it does) and having them it lets you reuse the code and also makes easier to manage how the application is run and what it does.
+      So function has code in it that uses also properties (if needed) and has output and input. Input as calling the function and its output after its done.
+    </p>
+
+    <h1>Event-Handling:</h1>
+    <p>Event handling means what actions happen due to interaction such as mouse click or move of a cursor or press of the button and the event handler will handle what actions happen on the specific interaction(event).
+      This is really great to programmers as they can change how the user interacts to the program or what is going to happen and it is all limited to imagination and creativity of the programmer.
+    </p>
+    <br>
+    <br>
+    </div>
+    
+  </body>
+</html>
